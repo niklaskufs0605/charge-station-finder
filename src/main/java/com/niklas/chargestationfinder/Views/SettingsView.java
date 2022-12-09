@@ -1,5 +1,6 @@
 package com.niklas.chargestationfinder.Views;
 
+import com.niklas.chargestationfinder.Enums.PlugFilter;
 import com.niklas.chargestationfinder.Helper.GUI;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
@@ -26,7 +27,6 @@ public class SettingsView extends AppLayout {
         //Add Components to UI
         addToDrawer(tabs);
         addToNavbar(toggle, title);
-
     }
 
     private Tabs setTabs() {
@@ -49,7 +49,6 @@ public class SettingsView extends AppLayout {
         RouterLink link = new RouterLink();
         link.add(icon, new Span(viewName));
         link.setTabIndex(-1);
-
         return new Tab(link);
     }
 

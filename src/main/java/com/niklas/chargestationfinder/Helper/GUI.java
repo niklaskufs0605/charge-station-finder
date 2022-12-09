@@ -10,7 +10,7 @@ import java.util.List;
 public class GUI {
     public static void createUI(H1 title, Tabs tabs, List<Tab> tabList, int pageIndex) {
         tabs.setSelectedIndex(pageIndex);
-        //create Ttile for Tabselection
+        //create title for Tab-selection
         title.setText("Stationfinder");
         title.getStyle().set("font-size", "var(--lumo-font-size-l)")
                 .set("margin", "0");

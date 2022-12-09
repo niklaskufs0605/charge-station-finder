@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.7-SNAPSHOT</version>
+        <version>2.7.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.niklas</groupId>
@@ -21,6 +21,12 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-install-plugin</artifactId>
+            <version>3.1.0</version>
+            <type>maven-plugin</type>
         </dependency>
 
         <dependency>
@@ -51,6 +57,12 @@
             <artifactId>vaadin-geo-location-flow-v14</artifactId>
             <version>2.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.vaadin/vaadin-maven-plugin -->
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-maven-plugin</artifactId>
+            <version>23.2.11</version>
+        </dependency>
 
     </dependencies>
     <dependencyManagement>
@@ -65,6 +77,7 @@
                 <artifactId>vaadin-maps-leaflet-flow</artifactId>
                 <version>2.0.2</version>
             </dependency>
+
             <dependency>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-bom</artifactId>
@@ -118,6 +131,13 @@
             <releases>
                 <enabled>false</enabled>
             </releases>
+        </pluginRepository>
+        <pluginRepository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </pluginRepository>
     </pluginRepositories>
 
