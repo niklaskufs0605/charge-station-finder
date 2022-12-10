@@ -12,6 +12,7 @@ import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLink;
+import org.vaadin.elmot.flow.sensors.GeoLocation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +26,9 @@ public class SettingsView extends AppLayout {
         H1 title = new H1();
         GUI.createUI(title, tabs, getTabs(), 1);
         //Add Components to UI
+
+
+
         addToDrawer(tabs);
         addToNavbar(toggle, title);
     }

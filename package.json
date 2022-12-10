@@ -105,6 +105,7 @@
     "@vaadin/virtual-list": "23.2.10",
     "construct-style-sheets-polyfill": "3.1.0",
     "date-fns": "2.29.3",
+    "leaflet": "1.8.0",
     "lit": "2.3.0"
   },
   "devDependencies": {
@@ -227,6 +228,7 @@
       "@vaadin/virtual-list": "23.2.10",
       "construct-style-sheets-polyfill": "3.1.0",
       "date-fns": "2.29.3",
+      "leaflet": "1.8.0",
       "lit": "2.3.0"
     },
     "devDependencies": {
@@ -245,7 +247,7 @@
       "workbox-core": "6.5.0",
       "workbox-precaching": "6.5.0"
     },
-    "hash": "5113a98e4343b7eb65e8679ab2fad1378b649dd51537f9202abdf4100c8e41a1"
+    "hash": "6e6ddc03553ca579271ff74610e9e8b96ce2a246248d3c4eb0574cab2b91875a"
   },
   "overrides": {
     "@vaadin/bundles": "$@vaadin/bundles",
@@ -350,6 +352,7 @@
     "construct-style-sheets-polyfill": "$construct-style-sheets-polyfill",
     "lit": "$lit",
     "@polymer/polymer": "$@polymer/polymer",
-    "date-fns": "$date-fns"
+    "date-fns": "$date-fns",
+    "leaflet": "$leaflet"
   }
 }

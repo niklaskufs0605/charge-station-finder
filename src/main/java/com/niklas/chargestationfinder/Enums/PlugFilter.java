@@ -17,11 +17,7 @@ public enum PlugFilter {
     Type3A("Type 3A");
 
 
-
-    ;
-
-
-    String name;
+    private String name;
     private PlugFilter(String name) {
         this.name = name;
     }
