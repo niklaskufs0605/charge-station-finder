@@ -1,6 +1,7 @@
 package com.niklas.chargestationfinder.Views;
 
 import com.niklas.chargestationfinder.Enums.LocationFilter;
+import com.niklas.chargestationfinder.Enums.OtherFilter;
 import com.niklas.chargestationfinder.Enums.PlugFilter;
 import com.niklas.chargestationfinder.Helper.GUI;
 import com.vaadin.flow.component.applayout.AppLayout;
@@ -10,6 +11,7 @@ import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
@@ -27,12 +29,23 @@ public class FilterView extends AppLayout {
     public FilterView() {
         MultiSelectComboBox<PlugFilter> plugFilter= setupPlugFilterComboBox();
         MultiSelectComboBox<LocationFilter> locationFilter = setupLocationFilterComboBox();
+        MultiSelectComboBox<OtherFilter> otherFilter = setupOtherFilterComboBox();
+        HorizontalLayout layout = new HorizontalLayout();
+        layout.setMargin(true);
+        layout.setPadding(true);
+        layout.setSpacing(true);
+        layout.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
+        layout.add(plugFilter, locationFilter, otherFilter);
+
+
+
+
 
         DrawerToggle toggle = new DrawerToggle();
         H1 title = new H1();
         GUI.createUI(title, tabs, getTabs(), 2);
         //Add Components to UI
-        setContent(new HorizontalLayout(locationFilter, plugFilter));
+        setContent(layout);
         addToDrawer(tabs);
         addToNavbar(toggle, title);
     }
@@ -89,6 +102,18 @@ public class FilterView extends AppLayout {
         filter.addSelectionListener(new MultiSelectionListener<MultiSelectComboBox<LocationFilter>, LocationFilter>() {
             @Override
             public void selectionChange(MultiSelectionEvent<MultiSelectComboBox<LocationFilter>, LocationFilter> multiSelectionEvent) {
+                //Todo: Set Action what happens when Combobox changes selection
+            }
+        });
+        return filter;
+    }
+    private MultiSelectComboBox setupOtherFilterComboBox(){
+        MultiSelectComboBox<OtherFilter> filter = new MultiSelectComboBox<>("Other");
+        filter.setItems(OtherFilter.values());
+        filter.setItemLabelGenerator(OtherFilter::getName);
+        filter.addSelectionListener(new MultiSelectionListener<MultiSelectComboBox<OtherFilter>, OtherFilter>() {
+            @Override
+            public void selectionChange(MultiSelectionEvent<MultiSelectComboBox<OtherFilter>, OtherFilter> multiSelectionEvent) {
                 //Todo: Set Action what happens when Combobox changes selection
             }
         });

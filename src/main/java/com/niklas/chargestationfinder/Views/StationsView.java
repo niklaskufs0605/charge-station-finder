@@ -33,7 +33,8 @@ public class StationsView extends AppLayout {
         addToDrawer(tabs);
         addToNavbar(toggle, title);
         //Add Geolocation to current Route
-        //UI.getCurrent().add(Geolocation.createGeolocation(geoLocation));
+        UI.getCurrent().add(Geolocation.createGeolocation(geoLocation));
+
 
 
         geoLocation.addValueChangeListener(new HasValue.ValueChangeListener<PositionValueChangeEvent>() {

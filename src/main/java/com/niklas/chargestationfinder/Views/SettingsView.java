@@ -1,6 +1,5 @@
 package com.niklas.chargestationfinder.Views;
 
-import com.niklas.chargestationfinder.Enums.PlugFilter;
 import com.niklas.chargestationfinder.Helper.GUI;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
@@ -12,7 +11,6 @@ import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLink;
-import org.vaadin.elmot.flow.sensors.GeoLocation;
 
 import java.util.ArrayList;
 import java.util.List;
