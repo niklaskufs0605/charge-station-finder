@@ -2,6 +2,7 @@ package com.niklas.chargestationfinder.API.Enums;
 
 import lombok.Getter;
 
+@Getter
 public enum Plug {
 
         TeslaFast("Tesla (Fast)"),

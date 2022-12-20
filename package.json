@@ -41,6 +41,7 @@
     "@vaadin/list-box": "23.2.10",
     "@vaadin/lit-renderer": "23.2.10",
     "@vaadin/login": "23.2.10",
+    "@vaadin/map": "23.2.10",
     "@vaadin/menu-bar": "23.2.10",
     "@vaadin/message-input": "23.2.10",
     "@vaadin/message-list": "23.2.10",
@@ -106,7 +107,8 @@
     "construct-style-sheets-polyfill": "3.1.0",
     "date-fns": "2.29.3",
     "leaflet": "1.8.0",
-    "lit": "2.3.0"
+    "lit": "2.3.0",
+    "proj4": "2.8.0"
   },
   "devDependencies": {
     "@rollup/plugin-replace": "3.1.0",
@@ -164,6 +166,7 @@
       "@vaadin/list-box": "23.2.10",
       "@vaadin/lit-renderer": "23.2.10",
       "@vaadin/login": "23.2.10",
+      "@vaadin/map": "23.2.10",
       "@vaadin/menu-bar": "23.2.10",
       "@vaadin/message-input": "23.2.10",
       "@vaadin/message-list": "23.2.10",
@@ -229,7 +232,8 @@
       "construct-style-sheets-polyfill": "3.1.0",
       "date-fns": "2.29.3",
       "leaflet": "1.8.0",
-      "lit": "2.3.0"
+      "lit": "2.3.0",
+      "proj4": "2.8.0"
     },
     "devDependencies": {
       "@rollup/plugin-replace": "3.1.0",
@@ -247,7 +251,7 @@
       "workbox-core": "6.5.0",
       "workbox-precaching": "6.5.0"
     },
-    "hash": "6e6ddc03553ca579271ff74610e9e8b96ce2a246248d3c4eb0574cab2b91875a"
+    "hash": "3d5309e38ba3c5624371f822a0574504321c2bcbbcbfc87c1023da2a24da6dc2"
   },
   "overrides": {
     "@vaadin/bundles": "$@vaadin/bundles",
@@ -353,6 +357,8 @@
     "lit": "$lit",
     "@polymer/polymer": "$@polymer/polymer",
     "date-fns": "$date-fns",
-    "leaflet": "$leaflet"
+    "leaflet": "$leaflet",
+    "proj4": "$proj4",
+    "@vaadin/map": "$@vaadin/map"
   }
 }

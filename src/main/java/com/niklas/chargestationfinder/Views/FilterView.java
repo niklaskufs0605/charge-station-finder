@@ -1,11 +1,16 @@
 package com.niklas.chargestationfinder.Views;
 
+import com.niklas.chargestationfinder.API.Requests.ApiRequest;
 import com.niklas.chargestationfinder.Enums.LocationFilter;
 import com.niklas.chargestationfinder.Enums.OtherFilter;
 import com.niklas.chargestationfinder.Enums.PlugFilter;
 import com.niklas.chargestationfinder.Helper.GUI;
+import com.vaadin.flow.component.ClickEvent;
+import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.MultiSelectComboBox;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Span;
@@ -13,6 +18,7 @@ import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.data.selection.MultiSelectionEvent;
@@ -30,22 +36,16 @@ public class FilterView extends AppLayout {
         MultiSelectComboBox<PlugFilter> plugFilter= setupPlugFilterComboBox();
         MultiSelectComboBox<LocationFilter> locationFilter = setupLocationFilterComboBox();
         MultiSelectComboBox<OtherFilter> otherFilter = setupOtherFilterComboBox();
-        HorizontalLayout layout = new HorizontalLayout();
-        layout.setMargin(true);
-        layout.setPadding(true);
-        layout.setSpacing(true);
-        layout.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
-        layout.add(plugFilter, locationFilter, otherFilter);
-
-
-
+        HorizontalLayout filterLayout = setupHorizontalFilterLayout();
+        filterLayout.add(plugFilter, locationFilter, otherFilter);
+        HorizontalLayout buttonLayout = setupHorizontalButtonLayout();
 
 
         DrawerToggle toggle = new DrawerToggle();
         H1 title = new H1();
         GUI.createUI(title, tabs, getTabs(), 2);
         //Add Components to UI
-        setContent(layout);
+        setContent(new VerticalLayout(filterLayout, buttonLayout));
         addToDrawer(tabs);
         addToNavbar(toggle, title);
     }
@@ -118,5 +118,35 @@ public class FilterView extends AppLayout {
             }
         });
         return filter;
+    }
+    private HorizontalLayout setupHorizontalFilterLayout(){
+        HorizontalLayout layout = new HorizontalLayout();
+        layout.setMargin(true);
+        layout.setPadding(true);
+        layout.setSpacing(true);
+        layout.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
+        return layout;
+    }
+    private HorizontalLayout setupHorizontalButtonLayout(){
+        Button button = new Button("Save");
+        button.addClickListener(new ComponentEventListener<ClickEvent<Button>>() {
+            @Override
+            public void onComponentEvent(ClickEvent<Button> buttonClickEvent) {
+                try {
+                    var test = new ApiRequest().request();
+                    UI.getCurrent().navigate("charge-stations/stations");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        HorizontalLayout layout = new HorizontalLayout();
+        layout.setMargin(true);
+        layout.setPadding(true);
+        layout.setSpacing(true);
+        layout.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
+        layout.setAlignItems(FlexComponent.Alignment.END);
+        layout.add(button);
+        return layout;
     }
 }
