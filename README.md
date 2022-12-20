@@ -6,7 +6,7 @@ A Vaadin project for finding and reserving Charging-stations for electric cars
 ## Package Documentation:
 ### API-Package
 - included all Models for creating the Station object.
-- Station object in needed to get the Stations from the API and display them
+- Station object is needed to get the Stations from the API and display them
 - also included the ApiPost and ApiRequest
 
 ### Helper
